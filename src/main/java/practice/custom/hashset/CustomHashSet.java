@@ -1,8 +1,13 @@
-package practice.trie;
+package practice.custom.hashset;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Create a custom hash set with out using hashmap.
+ *
+ * @param <T>
+ */
 public class CustomHashSet<T> {
     private List<T>[] array;
     private int size = 10;
@@ -17,6 +22,8 @@ public class CustomHashSet<T> {
     }
 
     public void add(T key) {
+        if (key == null)
+            throw new RuntimeException("Key can not be null");
         int hashCode = key.hashCode();
         int index = hashCode % size;
         List<T> bucketList = array[index];
@@ -30,6 +37,8 @@ public class CustomHashSet<T> {
     }
 
     public boolean contains(T key) {
+        if (key == null)
+            throw new RuntimeException("Key can not be null");
         int hashCode = key.hashCode();
         int index = hashCode % size;
         List<T> bucketList = array[index];
@@ -46,6 +55,8 @@ public class CustomHashSet<T> {
     }
 
     public void remove(T key) {
+        if (key == null)
+            throw new RuntimeException("Key can not be null");
         int hashCode = key.hashCode();
         int index = hashCode % size;
         List<T> bucketList = array[index];
@@ -54,7 +65,5 @@ public class CustomHashSet<T> {
         }
     }
 
-    private void reHash() {
-
-    }
+    // rehashing technique
 }
