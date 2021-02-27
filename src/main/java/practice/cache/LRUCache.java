@@ -3,8 +3,16 @@ package practice.cache;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LRU cache, is the cache replacement policy,
+ * in this case discard the element which is least recently used
+ * <p>
+ * Data Structure:
+ * HashMap for O(1) constant time search
+ * Doubly LinkedList for keeping track of least recently used elements with O(1) insert, update, delete operation
+ */
 public class LRUCache<K, V> {
-    class Node {
+    private class Node {
         K key;
         V value;
         Node prev;
