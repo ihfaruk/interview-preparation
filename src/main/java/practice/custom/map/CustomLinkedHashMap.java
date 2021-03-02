@@ -77,9 +77,7 @@ public class CustomLinkedHashMap<K, V> {
         int hashCode = key.hashCode();
         int index = (hashCode < 0 ? -hashCode : hashCode) % size;
         Node<K, V> node = mapArray[index];
-        if (node == null)
-            return null;
-        else {
+        if (node != null) {
             Node<K, V> tempNode = node;
             while (tempNode != null) {
                 if (tempNode.key.equals(key)) {
@@ -88,8 +86,8 @@ public class CustomLinkedHashMap<K, V> {
                     tempNode = tempNode.nextValueNode;
                 }
             }
-            return null;
         }
+        return null;
     }
 
     public List<K> keySet() {
