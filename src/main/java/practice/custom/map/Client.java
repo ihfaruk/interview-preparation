@@ -12,7 +12,7 @@ public class Client {
 
         System.out.println(customLinkedHashMap.get("Hossain"));
 
-        for(String key: customLinkedHashMap.keySet()){
+        for (String key : customLinkedHashMap.keySet()) {
             System.out.println(key);
         }
     }
